@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.6-SNAPSHOT'
+    id 'fabric-loom' version '1.8.+'
 }
 
 version = '1.0.0'
@@ -23,18 +23,4 @@ dependencies {
 java {
     sourceCompatibility = JavaVersion.VERSION_22
     targetCompatibility = JavaVersion.VERSION_22
-}
-
-// Вот это важно — увеличиваем память для сборки
-tasks.withType(JavaCompile).configureEach {
-    it.options.encoding = "UTF-8"
-    it.options.release.set(22)
-}
-
-loom {
-    runs {
-        client {
-            vmArgs "-Xmx4G"
-        }
-    }
 }
