@@ -3,7 +3,7 @@
   "package": "com.example.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "UpdateSlotMixin"
+    "InventoryMixin"
   ],
   "injectors": {
     "defaultRequire": 1
