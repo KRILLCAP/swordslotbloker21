@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "sword-slot-blocker",
   "version": "1.0.0",
-  "name": "Sword Slot Blocker",
-  "description": "Блокирует смену слота при получении урона (Анти-Конфуз)",
+  "name": "Confuse Blocker",
+  "description": "Зажмите Mouse 5, чтобы заблокировать переключение слотов",
   "authors": ["KRILICAP"],
   "environment": "client",
   "entrypoints": {
