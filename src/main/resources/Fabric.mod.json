@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "name": "Confuse Blocker",
   "description": "Блокиратор Конфуза",
-  "authors": ["KRILICAP"],
+  "authors": ["KRILLCAP"],
   "environment": "client",
   "entrypoints": {
     "client": ["com.example.TemplateMod"]
