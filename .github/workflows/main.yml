@@ -18,9 +18,6 @@ jobs:
           java-version: '22'
           distribution: 'temurin'
           
-      - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrapper-validation@v3
-          
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         
