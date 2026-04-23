@@ -1,20 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "sword-slot-blocker",
+  "id": "confuse-blocker",
   "version": "1.0.0",
   "name": "Confuse Blocker",
-  "description": "Зажмите Mouse 5, чтобы заблокировать переключение слотов",
+  "description": "Блокиратор Конфуза",
   "authors": ["KRILICAP"],
   "environment": "client",
   "entrypoints": {
     "client": ["com.example.TemplateMod"]
   },
-  "mixins": [
-    "sword-slot-blocker.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=0.16.0",
     "minecraft": "1.21.4",
-    "java": ">=22"
+    "java": ">=22",
+    "fabric-api": "*"
   }
 }
