@@ -4,21 +4,21 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 
 public class TemplateMod implements ClientModInitializer {
-    private int previousSlot = -1;
+    private int lastSlot = -1;
 
     @Override
     public void onInitializeClient() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.player == null) return;
-
-            boolean isTakingDamage = client.player.hurtTime > 0;
+            
             int currentSlot = client.player.getInventory().selectedSlot;
+            boolean isHurt = client.player.hurtTime > 0;
 
-            if (isTakingDamage && previousSlot != -1 && previousSlot != currentSlot) {
-                client.player.getInventory().selectedSlot = previousSlot;
+            if (isHurt && lastSlot != -1 && lastSlot != currentSlot) {
+                client.player.getInventory().selectedSlot = lastSlot;
             }
 
-            previousSlot = client.player.getInventory().selectedSlot;
+            lastSlot = client.player.getInventory().selectedSlot;
         });
     }
 }
