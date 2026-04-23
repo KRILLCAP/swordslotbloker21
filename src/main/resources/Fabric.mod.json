@@ -1,20 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "weapon-slot-locker",
+  "id": "hurt-slot-locker",
   "version": "1.0.0",
-  "name": "Weapon Slot Locker",
-  "description": "Блокирует смену слота при получении урона",
+  "name": "Hurt Slot Locker",
+  "description": "Блокирует переключение слота при получении урона",
   "authors": ["KRILICAP"],
   "environment": "client",
   "entrypoints": {
-    "client": [
-      "com.example.TemplateMod"
-    ]
+    "client": ["com.example.TemplateMod"]
   },
   "depends": {
     "fabricloader": ">=0.16.0",
     "minecraft": "1.21.4",
-    "java": ">=22",
-    "fabric-api": "*"
+    "java": ">=22"
   }
 }
