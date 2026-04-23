@@ -23,14 +23,21 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+          gradle-home-cache-includes: |
+            caches
+            notifications
+            loom-cache
+            loom-cache/remapped_mods
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build --no-daemon --stacktrace -Dorg.gradle.jvmargs="-Xmx4G -XX:+UseParallelGC"
-        env:
-          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4G -XX:+UseParallelGC"
+      - name: Build with Gradle (with retry)
+        run: |
+          ./gradlew build --no-daemon --stacktrace -Dorg.gradle.jvmargs="-Xmx4G" || \
+          ./gradlew build --no-daemon --stacktrace -Dorg.gradle.jvmargs="-Xmx4G" --refresh-dependencies
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
