@@ -1,14 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "hurt-slot-locker",
+  "id": "sword-slot-blocker",
   "version": "1.0.0",
-  "name": "Hurt Slot Locker",
-  "description": "Блокирует переключение слота при получении урона",
+  "name": "Sword Slot Blocker",
+  "description": "Блокирует смену слота при получении урона (Анти-Конфуз)",
   "authors": ["KRILICAP"],
   "environment": "client",
   "entrypoints": {
     "client": ["com.example.TemplateMod"]
   },
+  "mixins": [
+    "sword-slot-blocker.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.16.0",
     "minecraft": "1.21.4",
